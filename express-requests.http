@@ -29,7 +29,7 @@ POST http://localhost:3000/add-user
 Content-Type: application/json
 
 {
-  "name": "Kuba Kubiwsju",
+  "name": "Jaśko Kaśko",
   "email": "jw@wp.pl"
 }
 

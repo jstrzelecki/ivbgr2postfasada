@@ -1,8 +1,12 @@
 import express from 'express';
-import {readUserFromFile, writeUserToFile} from "./services/fileService.js";
+import {fetchUsers, storeUsers} from "./services/index.js";
+import path from "path";
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+const usersFilePath = path.join(path.resolve(), "users.json");
+
 
 app.use(express.json());
 
@@ -15,10 +19,10 @@ app.post("/add-user",async (req,res)=>{
     try{
         const newUser = req.body
 
-        const users = await readUserFromFile()
+        const users = await fetchUsers(usersFilePath);
         users.push(newUser)
 
-        await writeUserToFile(users)
+        await storeUsers(users, usersFilePath)
 
         res.status(201).send(`Użytkownik ${newUser.name} został dodany`)
     }catch(err){
