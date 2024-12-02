@@ -1,0 +1,39 @@
+### GET request main endpoint
+GET http://localhost:3000/
+
+###
+
+### POST add new user
+POST http://localhost:3000/add-user
+Content-Type: application/json
+
+{
+  "name": "Jaśko z Bogdańca",
+  "email": "krzyzacy@malbork.pl"
+}
+
+###
+
+### POST add new user Jakub Wędrowycz
+POST http://localhost:3000/add-user
+Content-Type: application/json
+
+{
+  "name": "Jakub Wędrowycz",
+  "email": "jw@siemianowice.pl"
+}
+
+###
+
+POST http://localhost:3000/add-user
+Content-Type: application/json
+
+{
+  "name": "Kuba Kubiwsju",
+  "email": "jw@wp.pl"
+}
+
+###
+
+
+
